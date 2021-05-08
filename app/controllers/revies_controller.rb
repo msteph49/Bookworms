@@ -1,0 +1,2 @@
+class ReviesController < ApplicationController
+end
