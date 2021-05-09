@@ -1,15 +1,18 @@
 class Book < ApplicationRecord
-  has_many :reviews
   belongs_to :genre
-  belongs_to :author
 
-  def author_name=(author_name)
-    self.author = Author.find_or_create_by(name: author_name)
-  end
+  has_many :reviews, dependent: :destroy
+  has_many :users, through: :reviews
+  has_many :authored_books 
+  has_many :authors, through: :authored_books
 
-  def genre_name=(genre_name)
-    self.genre = Genre.find_or_create_by(name: genre_name)
+  validates :title, :synopsis, presence: true 
+  validates :authored_books, presence: true
+
+  accepts_nested_attributes_for :authored_books
+
+  def to_s 
+    title
   end
-  
 end
 

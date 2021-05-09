@@ -1,6 +1,7 @@
 class MainController < ApplicationController
+  before_action :authenticate_user! 
+
   def index
-    flash[:notice] = "Logged in successfully"
-    flash[:alert] = "Invalid email or password"
+    @reviews = Review.all
   end
 end

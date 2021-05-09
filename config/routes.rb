@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :revies
   resources :authors
   resources :books
-  resources :users
+  
   
 end
