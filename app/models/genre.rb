@@ -1,4 +1,9 @@
 class Genre < ApplicationRecord
     has_many :books
-    has_many :users, through: :reviews
+
+  validates :name, presence: true, uniqueness: true
+
+  def to_s
+    name 
+  end
 end

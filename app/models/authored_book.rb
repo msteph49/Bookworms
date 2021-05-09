@@ -1,4 +1,4 @@
-class Author < ApplicationRecord
+class AuthoredBook < ApplicationRecord
     validates :name, presence: true 
 
     has_many :authored_books
