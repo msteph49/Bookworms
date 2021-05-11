@@ -7,7 +7,7 @@ class User < ApplicationRecord
     devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :lockable
 
-    devise :omniauthable, omniauth_providers: [:google_oauth2]
+    # devise :omniauthable, omniauth_providers: [:google_oauth2]
 
     has_many :reviews, dependent: :destroy
     has_many :books, through: :reviews

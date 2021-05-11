@@ -1,10 +1,10 @@
 class AuthoredBook < ApplicationRecord
-    validates :name, presence: true 
+  belongs_to :author
+  belongs_to :book
 
-    has_many :authored_books
-    has_many :books, through: :authored_books
-  
-    def to_s 
-      name
-    end
+  def to_s
+    "#{author} authored #{book}"
+  end
+
+  accepts_nested_attributes_for :author 
 end

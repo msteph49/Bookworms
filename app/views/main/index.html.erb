@@ -1,7 +1,2 @@
-<div class="d-flex align-items-center justify-content-center">
-<h1>Welcome to Bookworms</h1>
-</div>
-
-<% if user_signed_in? %>
-<%= link_to "Review Book", new_review_path %>
-<% end %>
+<h1>Feed</h1>
+<%= render partial: "review", collection: @reviews %>

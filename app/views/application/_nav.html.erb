@@ -2,6 +2,10 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"><%= app_name %></span>
     <div class="d-flex nav-item dropdown">
+      <%= link_to "Books", books_path %>
+      <%= link_to "Authors", authors_path %>
+      <%= link_to "Reviews", root_path %>
+      <%= link_to "Edit Account", edit_user_registration_path %>
       <% if user_signed_in? %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary me-2" %> 
       <% else %>

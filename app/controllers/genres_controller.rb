@@ -33,6 +33,7 @@ class GenresController < ApplicationController
                 format.html { render :edit, status: :unprocessable_entity }
             end
         end
+    end
     def destroy
         @genre.destroy
         respond_to do |format|

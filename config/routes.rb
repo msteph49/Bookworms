@@ -1,13 +1,16 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  resources :authors, :genres
+
+  resources :books do 
+    member do 
+      resource :reviews 
+    end
+  end
+
   devise_for :users
-  root to: 'main#index'
-  get "user", to: "user#index"
-  resources :genres
-  resources :reviews
-  resources :revies
-  resources :authors
-  resources :books
-  
-  
+
+  get "/@:username", to: "users#show"
+
+  root to: "main#index"
 end
